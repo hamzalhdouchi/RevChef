@@ -68,6 +68,20 @@
         </div>
     </div>
 </div>
+<div id="form_menu" class="w-screen h-screen flex justify-center">
+    <form class="bg-white p-6 rounded-lg shadow-md w-1/3">
+        <h2 class="text-lg font-semibold mb-4">Add Menu</h2>
+        <div class="mb-4">
+            <label for="menuName" class="block text-gray-700">Menu Name</label>
+            <input type="text" id="menuName" class="w-full px-4 py-2 border rounded-lg" placeholder="Enter menu name">
+        </div>
+        <div class="mb-4">
+            <label for="menuPrice" class="block text-gray-700">Price</label>
+            <input type="number" id="menuPrice" class="w-full px-4 py-2 border rounded-lg" placeholder="Enter price">
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Submit</button>
+    </form>
+</div>
 
 <script src="https://cdn.tailwindcss.com"></script>
 

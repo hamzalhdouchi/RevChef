@@ -81,3 +81,52 @@
     </div>
     <!-- Répétition pour chaque statistique -->
 </div>
+<div class="records table-responsive">
+    <div class="record-header">
+        <div class="add">
+            <span>Entries</span>
+            <select name="" id="">
+                <option value="">ID</option>
+            </select>
+            <button>Add record</button>
+        </div>
+
+        <div class="browse">
+            <input type="search" placeholder="Search" class="record-search">
+            <select name="" id="">
+                <option value="">Status</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th><span class="las la-sort"></span> CLIENT</th>
+                    <th><span class="las la-sort"></span> EMAIL</th>
+                    <th><span class="las la-sort"></span> TELEPHONE</th>
+                    <th><span class="las la-sort"></span> ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                while ($row = mysqli_fetch_assoc($result)) {
+                    if ($row['id_role'] == 2) {
+                ?>
+                        <tr>
+                            <td><?= $row['id'] ?></td>
+                            <td><?= $row['name_utilisateur'] ?></td>
+                            <td><?= $row['email'] ?></td>
+                            <td><?= $row['telephone'] ?></td>
+                            <td><!-- Boutons d'action --></td>
+                        </tr>
+                <?php
+                    }
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -55,6 +55,19 @@
     <h1>Dashboard</h1>
     <small>Home / Dashboard</small>
 </div>
+<div class="records table-responsive">
+    <div class="record-header">
+        <div class="add">
+            <button onclick="menu()">Add Menu</button>
+        </div>
+        <div class="browse">
+            <input type="search" placeholder="Search" class="record-search">
+            <select name="" id="">
+                <option value="">Status</option>
+            </select>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdn.tailwindcss.com"></script>
 

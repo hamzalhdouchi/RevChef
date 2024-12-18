@@ -51,6 +51,10 @@
         </div>
     </div>
 </header>
+<div class="page-header">
+    <h1>Dashboard</h1>
+    <small>Home / Dashboard</small>
+</div>
 
 <script src="https://cdn.tailwindcss.com"></script>
 

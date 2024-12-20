@@ -51,6 +51,9 @@ if (!$stmt->execute()) {
 if (empty($id)) {
     echo "Erreur : ID invalide.";
 }
+<button type="button" onclick="closeAlert()" ...>
+    <!-- Contenu -->
+</button>
 
  ?>
  <!DOCTYPE html>

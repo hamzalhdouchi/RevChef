@@ -25,6 +25,11 @@ $stmt = $connect->prepare(
    VALUES (?, ?, ?, ?, ?, ?)"
 );
 $stmt->bind_param("siisss", $date, $id_user, $menu, $people, $message, $time);
+if ($stmt->execute()) {
+  // Success message
+} else {
+  echo "Erreur lors de la réservation : " . $stmt->error;
+}
 
 ?> -->
 

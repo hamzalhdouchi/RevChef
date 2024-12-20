@@ -654,7 +654,11 @@ $stmt->close();
           <?php 
           $result = $connect->query("SELECT * FROM `reservation`");
           $reservations = ($result && $result->num_rows > 0) ? $result->fetch_all(MYSQLI_ASSOC) : [];
-          
+          if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            $now = $_SESSION['user'];
+            $id_user = htmlspecialchars($now['id']);
+        }
+        
           ?>
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
              <div class="row">

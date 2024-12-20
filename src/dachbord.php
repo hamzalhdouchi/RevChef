@@ -42,6 +42,8 @@ if ($result && $result->num_rows > 0) {
 } else {
     $users = [];
 }
+$stmt = $connect->prepare("DELETE FROM `utilisateur` WHERE id = ?");
+$stmt->bind_param("i", $id);
 
  ?>
  <!DOCTYPE html>

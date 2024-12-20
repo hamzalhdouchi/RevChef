@@ -168,6 +168,14 @@ if (isset($_POST['modifer'])) {
 if (!empty($name_user) && !empty($Email) && !empty($telephone) && !empty($password)) {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 }
+$stmt = $connect->prepare("UPDATE utilisateur SET name_utilisateur = ?, Email = ?, telephone = ?, password = ? WHERE id = ?");
+$stmt->bind_param("ssssi", $name_user, $Email, $telephone, $hashed_password, $id);
+
+if ($stmt->execute()) {
+    // Alerte de succès
+} else {
+    echo 'ina lilah awda ada hmade';
+}
 
 ?>
     <div>

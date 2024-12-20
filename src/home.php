@@ -700,6 +700,7 @@ $stmt->close();
 <div class="w-full h-10 bg-yellow-400 rounded-xl flex justify-evenly items-center mb-2">
     <!-- Contenu -->
 </div>
+<div>Réservation de : <?= $reserv['date_reservation'] ?></div>
 
           ?>
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">

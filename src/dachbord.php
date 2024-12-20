@@ -48,6 +48,10 @@ if (!$stmt->execute()) {
     echo "Erreur lors de la suppression.";
 }
 
+if (empty($id)) {
+    echo "Erreur : ID invalide.";
+}
+
  ?>
  <!DOCTYPE html>
 <html lang="en">

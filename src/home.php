@@ -1,4 +1,4 @@
-<!-- <?php 
+ <?php 
 session_start();
 require './db/database.php';
 
@@ -33,7 +33,7 @@ if ($stmt->execute()) {
 }
 ?>
 <div id="alert-border-3" class="absolute flex items-center p-4 mb-4 text-green-600 border-t-4 border-green-300 bg-green-50 dark:text-green-400 dark:bg-gray-800 dark:border-green-800 top-[7vw] z-50 w-[50vw] rounded-lg" role="alert">
-    <!-- Success message content -->
+     <!-- Success message content  -->
 </div>
 <button type="button" onclick="closeAlert()" class="ms-auto -mx-1.5 -my-1.5 bg-green-50 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex items-center justify-center h-8 w-8 dark:bg-gray-800 dark:text-green-400 dark:hover:bg-gray-700" data-dismiss-target="#alert-border-3" aria-label="Close">
     <span class="sr-only">Dismiss</span>
@@ -48,7 +48,7 @@ $message = htmlspecialchars(trim($_POST['message']), ENT_QUOTES);
 
 $stmt->close();
 
-?> -->
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -651,7 +651,11 @@ $stmt->close();
          </div>
 
          <div class="col-lg-8 mt-5 mt-lg-0">
-
+          <?php 
+          $result = $connect->query("SELECT * FROM `reservation`");
+          $reservations = ($result && $result->num_rows > 0) ? $result->fetch_all(MYSQLI_ASSOC) : [];
+          
+          ?>
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
              <div class="row">
                <div class="col-md-6 form-group">

@@ -1,21 +1,15 @@
 <!-- <?php 
+session_start();
 require './db/database.php';
 
-
-
-if (isset($_POST['reservation'])) {
-   $date = $_POST['date'];
-   $time = $_POST['time'];
-   $message = $_POST['message'];
-   $people = $_POST['people'];
-   var_dump($date,$time,$message,$people);
-   if (!empty($date) && !empty($time) && !empty($message) && !empty($people)) {
-     $query = mysqli_query($connect,"INSERT INTO resevation(date_reservation , people , message , time) VALUES ('$$date' ,'$people','$message','$time')");
-   }
-
+if (!isset($_SESSION['user'])) {
+    header("Location: login.php");
+    exit();
 }
 
- $resulte = mysqli_query($connect,"SELECT * FROM menu");
+$now = $_SESSION['user'];
+$id_user = $now['id'];
+
 ?> -->
 
 <!DOCTYPE html>

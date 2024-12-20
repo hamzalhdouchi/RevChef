@@ -157,7 +157,16 @@ echo "Utilisateur supprimé avec succès." ou echo "Erreur lors de la suppressio
             </select>
         </div>
     </div>
+<?php 
+if (isset($_POST['modifer'])) {
+    $id = $qury['id'];
+    $name_user = mysqli_real_escape_string($connect, $_POST['name_user']);
+    $Email = mysqli_real_escape_string($connect, $_POST['Email']);
+    $telephone = mysqli_real_escape_string($connect, $_POST['telephone']);
+    $password = $_POST['Password'];
+}
 
+?>
     <div>
         <table width="100%">
             <thead>

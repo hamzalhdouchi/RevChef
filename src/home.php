@@ -46,6 +46,8 @@ $result = mysqli_query($connect, "SELECT * FROM menu");
 $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 $message = htmlspecialchars(trim($_POST['message']), ENT_QUOTES);
 
+$stmt->close();
+
 ?> -->
 
 <!DOCTYPE html>

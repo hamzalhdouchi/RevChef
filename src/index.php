@@ -1,3 +1,9 @@
+<?php
+require '../project-hello/db/database.php';
+session_start();
+?>
+
+
 <!DOCTYPE html>
  <html>
 

@@ -9,6 +9,14 @@ if (!isset($_SESSION['user'])) {
 
 $now = $_SESSION['user'];
 $id_user = $now['id'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reservation'])) {
+
+  $date = trim($_POST['date']);
+  $people = intval($_POST['people']);
+  $time = trim($_POST['time']);
+  $message = htmlspecialchars(trim($_POST['message']), ENT_QUOTES);
+  $menu = intval($_POST['menu']);
+}
 
 ?> -->
 

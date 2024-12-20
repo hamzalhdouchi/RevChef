@@ -671,7 +671,18 @@ $stmt->close();
             </div>
             <?php
             }
-            
+            else if ($reserv['Répondre'] == 1 && $reserv['id_utilisateur'] == $id_user) {
+              ?>
+              <div class="w-full h-10 bg-green-400 rounded-xl flex justify-evenly items-center mb-2">
+                  <div>Réservation de : <?= $reserv['date_reservation'] ?></div>
+                  <form action="" method="POST">
+                      <input type="hidden" value="<?= $reserv['id_reservation'] ?>">
+                      <button type="submit" class="h-6 w-16 bg-red-900 rounded-lg">Annuler</button>
+                  </form>
+              </div>
+              <?php
+              }
+              
           ?>
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
              <div class="row">

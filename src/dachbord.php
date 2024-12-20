@@ -44,6 +44,9 @@ if ($result && $result->num_rows > 0) {
 }
 $stmt = $connect->prepare("DELETE FROM `utilisateur` WHERE id = ?");
 $stmt->bind_param("i", $id);
+if (!$stmt->execute()) {
+    echo "Erreur lors de la suppression.";
+}
 
  ?>
  <!DOCTYPE html>

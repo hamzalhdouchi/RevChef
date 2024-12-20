@@ -13,6 +13,16 @@ if (!empty($name_user) && !empty($email) && !empty($telephone) && !empty($passwo
     echo "All fields are required.";
 }
 $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+$stmt = $connect->prepare("INSERT INTO utilisateur (name_utilisateur, Email, telephone, password) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $name_user, $email, $telephone, $hashed_password);
+
+if ($stmt->execute()) {
+    echo "User registered successfully!";
+} else {
+    echo "Error: " . $stmt->error;
+}
+
+$stmt->close();
 
 ?>
 

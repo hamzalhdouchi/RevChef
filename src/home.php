@@ -658,7 +658,9 @@ $stmt->close();
             $now = $_SESSION['user'];
             $id_user = htmlspecialchars($now['id']);
         }
-        
+        foreach ($reservation as $reserv) {
+          ?><div class="w-screen "><?php
+      
           ?>
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
              <div class="row">

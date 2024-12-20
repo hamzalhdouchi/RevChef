@@ -215,3 +215,5 @@ if ($result && $result->num_rows > 0) {
         <p>&copy; 2024 Your Company. All rights reserved.</p>
     </div>
 </footer>
+</body>
+</html>

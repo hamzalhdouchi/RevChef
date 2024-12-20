@@ -17,6 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reservation'])) {
   $message = htmlspecialchars(trim($_POST['message']), ENT_QUOTES);
   $menu = intval($_POST['menu']);
 }
+if (!empty($date) && !empty($people) && !empty($time) && !empty($message) && !empty($menu)) {
+  // Continue processing
+}
 
 ?> -->
 

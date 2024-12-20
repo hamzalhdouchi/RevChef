@@ -18,7 +18,10 @@ if (!empty($name_menu) && !empty($description) && $prix > 0) {
         echo 'Erreur lors de l\'ajout du menu.';
     }
     $stmt->close();
-    
+} else {
+    echo 'Tous les champs sont obligatoires et le prix doit être supérieur à 0.';
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

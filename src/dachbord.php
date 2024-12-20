@@ -5,6 +5,23 @@
     header("Location: ./login.php");
     exit;
 }
+if (isset($_POST['supprimer'])) {
+    $id = intval($_POST['id']);
+    if (!empty($id)) {
+        $stmt = $connect->prepare("DELETE FROM `utilisateur` WHERE id = ?");
+        $stmt->bind_param("i", $id);
+        if ($stmt->execute()) {
+            ?>
+            <!-- Code de l'alerte ici -->
+            <?php
+        } else {
+            echo "Erreur lors de la suppression.";
+        }
+        $stmt->close();
+    } else {
+        echo "Erreur : ID invalide.";
+    }
+}
 
  ?>
  <!DOCTYPE html>

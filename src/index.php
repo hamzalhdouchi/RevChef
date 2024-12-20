@@ -7,6 +7,11 @@ if (isset($_POST['Sign'])) {
     $telephone = trim($_POST['telephone']);
     $password = trim($_POST['pswd']);
 }
+if (!empty($name_user) && !empty($email) && !empty($telephone) && !empty($password)) {
+   
+} else {
+    echo "All fields are required.";
+}
 
 ?>
 

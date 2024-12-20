@@ -8,6 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_menu'])) {
     $description = htmlspecialchars(trim($_POST['Descreption']));
     $prix = floatval($_POST['prix']);
 }
+if (!empty($name_menu) && !empty($description) && $prix > 0) {
 
 ?>
 <!DOCTYPE html>

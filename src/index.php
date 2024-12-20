@@ -32,6 +32,10 @@ if (!empty($email) && !empty($password)) {
 } else {
     echo "All fields are required.";
 }
+$stmt = $connect->prepare("SELECT * FROM utilisateur WHERE Email = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
 
 ?>
 

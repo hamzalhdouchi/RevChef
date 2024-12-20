@@ -1,3 +1,15 @@
+<?php
+require './db/database.php';
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_menu'])) {
+    $Chef = intval(trim($_POST['Chef']));
+    $name_menu = trim($_POST['name']);
+    $description = htmlspecialchars(trim($_POST['Descreption']));
+    $prix = floatval($_POST['prix']);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

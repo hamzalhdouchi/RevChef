@@ -52,6 +52,11 @@ if ($result->num_rows > 0) {
         echo "Incorrect password.";
     }
 }
+if ($result->num_rows == 0) {
+    echo "User not found.";
+} else if (!password_verify($password, $user['password'])) {
+    echo "Incorrect password.";
+}
 
 ?>
 

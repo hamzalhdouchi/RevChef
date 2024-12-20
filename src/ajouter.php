@@ -21,6 +21,9 @@ if (!empty($name_menu) && !empty($description) && $prix > 0) {
 } else {
     echo 'Tous les champs sont obligatoires et le prix doit être supérieur à 0.';
 }
+$qurey = mysqli_query($connect, "SELECT * FROM utilisateur WHERE id_role = 1");
+$resulte = mysqli_query($connect, "SELECT * FROM menu");
+$data = mysqli_fetch_all($resulte, MYSQLI_ASSOC);
 
 ?>
 <!DOCTYPE html>

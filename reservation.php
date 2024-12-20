@@ -187,3 +187,26 @@ if ($result && $result->num_rows > 0) {
 </table>
 </div>
 </div>
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
+        $action = $_POST['action'];
+        if ($action == 'Accepter') {
+            $status = intval($_POST['status']);
+            $id = intval($_POST['reservation']);
+            if (!empty($status)) {
+                $stmt = $connect->prepare("UPDATE reservation SET Répondre = ? WHERE id_reservation  = ?");
+                $stmt->bind_param("ii", $status, $id);
+                $stmt->execute();
+            }
+        }
+        if ($action == 'refuser') {
+            $status = intval($_POST['status1']);
+            $id = intval($_POST['refuse']);
+            if (!empty($status)) {
+                $stmt = $connect->prepare("UPDATE reservation SET Répondre = ? WHERE id_reservation  = ?");
+                $stmt->bind_param("ii", $status, $id);
+                $stmt->execute();
+            }
+        }
+    }
+?>

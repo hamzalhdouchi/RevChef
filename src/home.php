@@ -701,6 +701,7 @@ $stmt->close();
     <!-- Contenu -->
 </div>
 <div>Réservation de : <?= $reserv['date_reservation'] ?></div>
+$id_user = htmlspecialchars($now['id']);
 
           ?>
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">

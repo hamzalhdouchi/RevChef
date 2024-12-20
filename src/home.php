@@ -28,8 +28,10 @@ $stmt->bind_param("siisss", $date, $id_user, $menu, $people, $message, $time);
 if ($stmt->execute()) {
   // Success message
 } else {
+  
   echo "Erreur lors de la réservation : " . $stmt->error;
 }
+?>
 <div id="alert-border-3" class="absolute flex items-center p-4 mb-4 text-green-600 border-t-4 border-green-300 bg-green-50 dark:text-green-400 dark:bg-gray-800 dark:border-green-800 top-[7vw] z-50 w-[50vw] rounded-lg" role="alert">
     <!-- Success message content -->
 </div>
@@ -39,6 +41,9 @@ if ($stmt->execute()) {
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
     </svg>
 </button>
+<?php
+$result = mysqli_query($connect, "SELECT * FROM menu");
+$data = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 ?> -->
 

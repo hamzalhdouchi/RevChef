@@ -165,6 +165,9 @@ if (isset($_POST['modifer'])) {
     $telephone = mysqli_real_escape_string($connect, $_POST['telephone']);
     $password = $_POST['Password'];
 }
+if (!empty($name_user) && !empty($Email) && !empty($telephone) && !empty($password)) {
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+}
 
 ?>
     <div>

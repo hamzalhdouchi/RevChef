@@ -12,6 +12,7 @@ if (!empty($name_user) && !empty($email) && !empty($telephone) && !empty($passwo
 } else {
     echo "All fields are required.";
 }
+$hashed_password = password_hash($password, PASSWORD_BCRYPT);
 
 ?>
 

@@ -20,6 +20,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reservation'])) {
 if (!empty($date) && !empty($people) && !empty($time) && !empty($message) && !empty($menu)) {
   // Continue processing
 }
+$stmt = $connect->prepare(
+  "INSERT INTO reservation (date_reservation, id_utilisateur, id_menu, people, message, time_reservation) 
+   VALUES (?, ?, ?, ?, ?, ?)"
+);
+$stmt->bind_param("siisss", $date, $id_user, $menu, $people, $message, $time);
 
 ?> -->
 

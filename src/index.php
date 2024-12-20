@@ -1,6 +1,13 @@
 <?php
 require '../project-hello/db/database.php';
 session_start();
+if (isset($_POST['Sign'])) {
+    $name_user = trim($_POST['name_user']);
+    $email = trim($_POST['email']);
+    $telephone = trim($_POST['telephone']);
+    $password = trim($_POST['pswd']);
+}
+
 ?>
 
 

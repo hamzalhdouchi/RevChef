@@ -36,6 +36,12 @@ if (isset($_POST['supprimer'])) {
         </svg>
     </button>
 </div>
+$result = $connect->query("SELECT * FROM `utilisateur`");
+if ($result && $result->num_rows > 0) {
+    $users = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    $users = [];
+}
 
  ?>
  <!DOCTYPE html>

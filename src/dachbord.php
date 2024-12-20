@@ -189,6 +189,9 @@ if ($stmt->execute()) {
     </svg>
 </button>
 </div>
+if (!$stmt->execute()) {
+    echo 'ina lilah awda ada hmade';
+}
 
 
 ?>

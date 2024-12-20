@@ -9,7 +9,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter_menu'])) {
     $prix = floatval($_POST['prix']);
 }
 if (!empty($name_menu) && !empty($description) && $prix > 0) {
-
+    $stmt = $connect->prepare("INSERT INTO menu (name, descreption, prix, id_utilisateur) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("ssdi", $name_menu, $description, $prix, $Chef);
+    
+    if ($stmt->execute()) {
+        echo 'Menu ajouté avec succès !';
+    } else {
+        echo 'Erreur lors de l\'ajout du menu.';
+    }
+    $stmt->close();
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">

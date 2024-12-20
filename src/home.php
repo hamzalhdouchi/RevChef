@@ -693,7 +693,11 @@ $stmt->close();
                 </div>
                 <?php
                 }
-                
+                <form action="" method="POST">
+    <input type="hidden" value="<?= $reserv['id_reservation'] ?>">
+    <button type="submit" class="h-6 w-16 bg-red-900 rounded-lg">Annuler</button>
+</form>
+
           ?>
            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
              <div class="row">

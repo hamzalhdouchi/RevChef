@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+ <?php 
+ session_start();
+ require "./db/database.php";
+ 
+ ?>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

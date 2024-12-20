@@ -693,6 +693,7 @@ $stmt->close();
                 </div>
                 <?php
                 }
+                ?>
                 <form action="" method="POST">
     <input type="hidden" value="<?= $reserv['id_reservation'] ?>">
     <button type="submit" class="h-6 w-16 bg-red-900 rounded-lg">Annuler</button>
@@ -700,7 +701,7 @@ $stmt->close();
 <div class="w-full h-10 bg-yellow-400 rounded-xl flex justify-evenly items-center mb-2">
     <!-- Contenu -->
 </div>
-<div>Réservation de : <?= $reserv['date_reservation'] ?></div>
+<div>Réservation de : <?= $reserv['date_reservation'] ?></div><?php
 $id_user = htmlspecialchars($now['id']);
 
           ?>

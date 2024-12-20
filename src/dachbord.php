@@ -54,6 +54,7 @@ if (empty($id)) {
 <button type="button" onclick="closeAlert()" ...>
     <!-- Contenu -->
 </button>
+echo "Utilisateur supprimé avec succès." ou echo "Erreur lors de la suppression.";
 
  ?>
  <!DOCTYPE html>

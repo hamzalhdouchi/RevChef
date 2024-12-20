@@ -36,6 +36,22 @@ $stmt = $connect->prepare("SELECT * FROM utilisateur WHERE Email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+
+    if (password_verify($password, $user['password'])) {
+        $_SESSION['user'] = $user;
+
+        if ($user['id_role'] == 1) {
+            header("Location: ./dachbord.php");
+        } else {
+            header("Location: ./home.php");
+        }
+        exit();
+    } else {
+        echo "Incorrect password.";
+    }
+}
 
 ?>
 

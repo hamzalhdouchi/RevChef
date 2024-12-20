@@ -137,3 +137,53 @@ if ($result && $result->num_rows > 0) {
         </div>
     </div>
 </div>
+<div class="records table-responsive">
+    <div class="record-header">
+        <div class="add">
+            <span>Entries</span>
+            <select name="" id="">
+                <option value="">ID</option>
+            </select>
+            <button>Add record</button>
+        </div>
+        <div class="browse">
+            <input type="search" placeholder="Search" class="record-search">
+            <select name="" id="">
+                <option value="">Status</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th><span class="las la-sort"></span> name</th>
+                    <th><span class="las la-sort"></span> Date</th>
+                    <th><span class="las la-sort"></span> Time</th>
+                    <th><span class="las la-sort"></span> Number of people</th>
+                    <th><span class="las la-sort"></span> Message</th>
+                    <th><span class="las la-sort"></span> Action</th>
+                </tr>
+            </thead>
+            <tbody>
+            ```
+
+### 10. **Display Reservation Data in Table Rows**
+- **Commit message**: `Loop through reservation records and display in table rows.`
+```php
+<?php foreach ($reservation as $reserv): ?>
+    <tr>
+        <td><?= $reserv['id'] ?></td>
+        <td><?= htmlspecialchars($reserv['name'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><?= htmlspecialchars($reserv['date'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><?= htmlspecialchars($reserv['time'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><?= htmlspecialchars($reserv['people'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><?= htmlspecialchars($reserv['message'], ENT_QUOTES, 'UTF-8') ?></td>
+        <td><button>Action</button></td>
+    </tr>
+<?php endforeach; ?>
+</tbody>
+</table>
+</div>
+</div>
